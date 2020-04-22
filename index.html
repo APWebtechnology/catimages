@@ -48,8 +48,8 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-6">          
-          <div class="spinner-border mx-auto d-block" role="status">
+        <div class="col-6">
+          <div class="spinner-border mx-auto d-block invisible" role="status">
             <span class="sr-only">Loading...</span>
           </div>
           <img src="" class="img-fluid rounded mx-auto d-block">
@@ -62,6 +62,8 @@
   <script>
     var sUrl = "https://api.thecatapi.com/v1/images/search";
     function getCatImage() {
+      $(".spinner-border").removeClass('invisible');
+      $(".spinner-border").addClass('visible');
       $.get(sUrl)
         .done(function (oData) {
           $("img").attr('src', oData[0].url);
