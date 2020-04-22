@@ -67,6 +67,8 @@
       $.get(sUrl)
         .done(function (oData) {
           $("img").attr('src', oData[0].url);
+          $(".spinner-border").removeClass('visible');
+          $(".spinner-border").addClass('invisible');
         })
         .fail(function (oError) {
           console.error(oError);
